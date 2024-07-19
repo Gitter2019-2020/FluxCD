@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+  namespace: nnbe-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+      version: green
+  template:
+    metadata:
+      labels:
+        app: hello-world
+        version: green
+    spec:
+      containers:
+      - name: green-container
+        image: mcr.microsoft.com/azuredocs/aks-helloworld:v1
+        ports:
+        - containerPort: 80
+        env:
+        - name: TITLE
+          value: "Hello GREEN world!"
