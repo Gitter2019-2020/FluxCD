@@ -2,18 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello-world-ingress
-  namespace: nnbe-poc
 spec:
-  ingressClassName: webapprouting.kubernetes.azure.com
-  tls:
-    - hosts:
-        - nnbepocaks.4879c9df-87ea-49ae-81e1-f3fb24a8a05f.az.insim.biz
-      secretName: keyvault-aks-helloworld
+  ingressClassName: nginx
+  # tls:
+  #   - hosts:
+  #       - nnbepocaks.4879c9df-87ea-49ae-81e1-f3fb24a8a05f.az.insim.biz
+  #     secretName: keyvault-aks-helloworld
   rules:
-    - host: nnbepocaks.4879c9df-87ea-49ae-81e1-f3fb24a8a05f.az.insim.biz
+    - host: k8s.ypto-sdcoe.com
       http:
         paths:
-          - path: /
+          - path: /hello
             pathType: Prefix
             backend:
               service:
