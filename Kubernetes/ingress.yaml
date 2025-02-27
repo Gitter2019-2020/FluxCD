@@ -15,7 +15,7 @@ spec:
     - host: k8s.ypto-sdcoe.com
       http:
         paths:
-          - path: /hello/(.*)
+          - path: /hello-test/(.*)
             pathType: Prefix
             backend:
               service:
