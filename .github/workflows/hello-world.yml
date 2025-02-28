@@ -21,7 +21,9 @@ jobs:
           fetch-depth: 0
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ./scripts/adapt.sh ${{ inputs.location }}
+        run: |
+          chmod 751 ./scripts/adapt.sh
+          ./scripts/adapt.sh ${{ inputs.location }}
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
