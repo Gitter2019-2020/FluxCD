@@ -5,9 +5,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-          msg:
-            required: true
-            description: "Just a message to pass"
+      location:
+        required: true
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -22,17 +21,15 @@ jobs:
           fetch-depth: 0
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: cp ./templates/vnet.yaml Recursi/vnet.yaml
+        run: ./scripts/adapt.sh ${{ inputs.location }}
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "${{ inputs.msg }}"
+          git commit -m "temp"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-          
-        #"echo Hello world: ${{ inputs.msg }}!   ${{ secrets.GITHUB_TOKEN }} !!"
