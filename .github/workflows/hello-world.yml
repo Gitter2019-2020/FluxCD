@@ -18,4 +18,6 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: "echo Hello world: ${{ inputs.msg }}!   ${{ secrets.GITHUB_TOKEN }} !!"
+        run: cp templates/vnet.yaml Recursi/vnet.yaml
+        
+        #"echo Hello world: ${{ inputs.msg }}!   ${{ secrets.GITHUB_TOKEN }} !!"
