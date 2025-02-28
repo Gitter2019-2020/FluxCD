@@ -16,8 +16,23 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: cp templates/vnet.yaml Recursi/vnet.yaml
-        
+      - name: Commit changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "${{ inputs.msg }}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          
         #"echo Hello world: ${{ inputs.msg }}!   ${{ secrets.GITHUB_TOKEN }} !!"
