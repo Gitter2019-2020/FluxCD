@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: cp templates/vnet.yaml Recursi/vnet.yaml
+        run: cp ./templates/vnet.yaml Recursi/vnet.yaml
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
