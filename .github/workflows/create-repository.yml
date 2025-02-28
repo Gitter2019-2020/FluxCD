@@ -1,4 +1,4 @@
-name: Create Repository
+name: Create Repo
 on: 
   workflow_dispatch:
     inputs:
@@ -19,6 +19,6 @@ jobs:
         id: create-repo
         with:
           repo-name: '${{ github.event.inputs.repo-name }}'
-          org-admin-token: '${{ secrets.ORG_ADMIN_TOKEN }}'
+          org-admin-token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Log URL to the repo
         run: echo "The new repo is ${{ steps.create-repo.outputs.repo-url }}"
