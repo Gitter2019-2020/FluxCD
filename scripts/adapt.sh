@@ -1,6 +1,6 @@
 LOCATION=$1
 
-cat ${LOCATION}
+echo ${LOCATION}
 
 FILE_PATH=Recursi/vnet.yaml
 

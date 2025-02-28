@@ -23,7 +23,7 @@ jobs:
       - name: Run a one-line script
         run: |
           chmod 751 ./scripts/adapt.sh
-          ./scripts/adapt.sh ${{ inputs.location }}
+          ./scripts/adapt.sh "${{ inputs.location }}"
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
