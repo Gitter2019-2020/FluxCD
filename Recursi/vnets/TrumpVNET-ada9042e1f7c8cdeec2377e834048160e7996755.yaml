@@ -1,0 +1,10 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: VirtualNetwork
+metadata:
+  name: TrumpVNET-ada9042e1f7c8cdeec2377e834048160e7996755
+spec:
+  forProvider:
+    addressSpace:
+      - 10.0.0.0/16
+    location: East US
+    resourceGroupName: Kubernetes_Cluster_RG
