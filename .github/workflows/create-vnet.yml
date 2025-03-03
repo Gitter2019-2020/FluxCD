@@ -1,15 +1,16 @@
-name: Create New Repository
+name: Create VNET
 
-on: 
+on:
   workflow_dispatch:
     inputs:
-      name: 
+      name:
+        required: true
+      location:
         required: true
 
 jobs:
-  create-repository:
+  create-vnet:
     runs-on: ubuntu-latest
-    name: Creating Organization Repository
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -19,7 +20,7 @@ jobs:
       - name: Create vnet.yaml file
         run: |
           chmod 751 ./scripts/adapt.sh
-          ./scripts/adapt-repo.sh "${{ inputs.name }}"
+          ./scripts/adapt-vnet.sh "${{ inputs.location }}" "${{ inputs.name }}-${{ github.sha }}"
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
