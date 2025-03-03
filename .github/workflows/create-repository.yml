@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
       - name: Create vnet.yaml file
         run: |
-          chmod 751 ./scripts/adapt-repo.sh
+          chmod 755 ./scripts/adapt-repo.sh
           ./scripts/adapt-repo.sh "${{ inputs.name }}"
       - name: Commit
         run: |
