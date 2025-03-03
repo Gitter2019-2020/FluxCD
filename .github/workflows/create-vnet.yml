@@ -19,6 +19,7 @@ jobs:
           fetch-depth: 0
       - name: Create vnet.yaml file
         run: |
+          chmod 755 -R ./Recursi/
           chmod 755 ./scripts/adapt-vnet.sh
           ./scripts/adapt-vnet.sh "${{ inputs.location }}" "${{ inputs.name }}"
       - name: Commit
