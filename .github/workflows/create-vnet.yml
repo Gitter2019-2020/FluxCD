@@ -20,7 +20,7 @@ jobs:
       - name: Create vnet.yaml file
         run: |
           chmod 751 ./scripts/adapt-vnet.sh
-          ./scripts/adapt-vnet.sh "${{ inputs.location }}" "${{ inputs.name }}-${{ github.sha }}"
+          ./scripts/adapt-vnet.sh "${{ inputs.location }}" "${{ inputs.name }}"
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
