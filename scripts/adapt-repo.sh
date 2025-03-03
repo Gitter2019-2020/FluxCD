@@ -5,7 +5,7 @@ echo ${NAME}
 FILE_PATH=Recursi/repos/${NAME}.yaml
 
 
-
+mkdir -p Recursi/repos
 cp ./templates/repo.yaml $FILE_PATH
 
 yq --inplace ".spec.forProvider.name = \"${NAME}\"" $FILE_PATH

@@ -7,7 +7,7 @@ echo ${NAME}
 FILE_PATH=Recursi/vnets/${NAME}.yaml
 
 
-
+mkdir -p Recursi/vnets
 cp ./templates/vnet.yaml $FILE_PATH
 
 yq --inplace ".spec.forProvider.location = \"${LOCATION}\"" $FILE_PATH
