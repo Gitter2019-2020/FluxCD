@@ -1,7 +1,7 @@
 apiVersion: network.azure.upbound.io/v1beta1
 kind: VirtualNetwork
 metadata:
-  name: TrumpVNET-ada9042e1f7c8cdeec2377e834048160e7996755
+  name: trumpnet-ada9042e1f7c8cdeec2377e834048160e7996755
 spec:
   forProvider:
     addressSpace:
