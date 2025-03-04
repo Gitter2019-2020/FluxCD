@@ -1,0 +1,10 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: VirtualNetwork
+metadata:
+  name: hithere-3b09bca885f44c81afbac5d28960cb97d47f5238
+spec:
+  forProvider:
+    addressSpace:
+      - 10.0.0.0/16
+    location: UK South
+    resourceGroupName: Kubernetes_Cluster_RG
