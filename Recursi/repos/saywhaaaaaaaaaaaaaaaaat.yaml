@@ -5,6 +5,6 @@ metadata:
 spec:
   forProvider:
     visibility: public
-    name: jaja2
+    name: jaja234569
   providerConfigRef:
     name: default
