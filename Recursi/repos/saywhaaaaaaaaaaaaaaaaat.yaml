@@ -1,10 +1,10 @@
 apiVersion: repo.github.upbound.io/v1alpha1
 kind: Repository
 metadata:
-  name: saywhaaaaaaaaaaaaaaaaat
+  name: jaja
 spec:
   forProvider:
     visibility: public
-    name: saywhaaaaaaaaaaaaaaaaat
+    name: jaja
   providerConfigRef:
     name: default
