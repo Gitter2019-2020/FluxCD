@@ -1,0 +1,10 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: VirtualNetwork
+metadata:
+  name: basil-test-76a5ed9e9d71912b5f7ee2fb3e8ba0b2c334dc32
+spec:
+  forProvider:
+    addressSpace:
+      - 10.0.0.0/16
+    location: UK South
+    resourceGroupName: Kubernetes_Cluster_RG
