@@ -19,7 +19,7 @@ jobs:
       - name: Create vnet.yaml file
         run: |
           chmod 755 ./scripts/update-repo.sh
-          ./scripts/update-repo.sh "${{ inputs.name }}"
+          ./scripts/update-repo.sh "${{ inputs.name }}" "${{ inputs.rename }}"
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
