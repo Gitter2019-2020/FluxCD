@@ -1,0 +1,10 @@
+apiVersion: repo.github.upbound.io/v1alpha1
+kind: Repository
+metadata:
+  name: saywhaaaaaaaaaaaaaaaaat
+spec:
+  forProvider:
+    visibility: public
+    name: saywhaaaaaaaaaaaaaaaaat
+  providerConfigRef:
+    name: default
