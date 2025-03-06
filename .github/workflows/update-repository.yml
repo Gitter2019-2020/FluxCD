@@ -3,6 +3,8 @@ name: Update Repository
 on: 
   workflow_dispatch:
     inputs:
+      rename: 
+        required: true
       name: 
         required: true
 
