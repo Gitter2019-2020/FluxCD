@@ -1,4 +1,4 @@
-name: Create New Repository
+name: Create Repository
 
 on: 
   workflow_dispatch:
@@ -18,8 +18,8 @@ jobs:
           fetch-depth: 0
       - name: Create vnet.yaml file
         run: |
-          chmod 755 ./scripts/adapt-repo.sh
-          ./scripts/adapt-repo.sh "${{ inputs.name }}"
+          chmod 755 ./scripts/repos/create-repository.sh
+          ./scripts/repos/create-repository.sh "${{ inputs.name }}"
       - name: Commit
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

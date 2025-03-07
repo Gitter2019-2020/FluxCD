@@ -1,7 +1,5 @@
 NAME=$1
 
-echo ${NAME}
-
 FILE_PATH=Recursi/repos/${NAME}.yaml
 
 
