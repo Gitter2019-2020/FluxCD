@@ -5,6 +5,6 @@ metadata:
 spec:
   forProvider:
     visibility: public
-    name: rename-again
+    name: change-once-more
   providerConfigRef:
     name: default
