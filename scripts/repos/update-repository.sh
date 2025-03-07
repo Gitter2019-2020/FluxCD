@@ -6,7 +6,7 @@ NEW_FILE_PATH=Recursi/repos/${NEW_NAME}.yaml
 
 echo cat $OLD_FILE_PATH
 
-OLD_META=cat $OLD_FILE_PATH | yq ".metadata.name"
+OLD_META=$(yq ".metadata.name" $OLD_FILE_PATH)
 
 echo $OLD_META
 
