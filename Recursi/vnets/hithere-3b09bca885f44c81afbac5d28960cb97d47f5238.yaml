@@ -2,7 +2,8 @@ apiVersion: network.azure.upbound.io/v1beta1
 kind: VirtualNetwork
 metadata:
   name: hithere-3b09bca885f44c81afbac5d28960cb97d47f5240
-  guid: abcde
+  labels:
+    guid: abcde
 spec:
   forProvider:
     addressSpace:
