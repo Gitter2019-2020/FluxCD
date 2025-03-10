@@ -6,6 +6,8 @@ echo ${NAME}
 
 FILE_PATH=Recursi/vnets/${NAME}.yaml
 
+#uuidgen -r
+
 
 mkdir -p Recursi/vnets
 cp ./templates/vnet.yaml $FILE_PATH
