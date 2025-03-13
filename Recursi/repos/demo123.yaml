@@ -5,6 +5,6 @@ metadata:
 spec:
   forProvider:
     visibility: public
-    name: sure-thing
+    name: demo123
   providerConfigRef:
     name: default
