@@ -1,0 +1,25 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: terraform-azure-sammy
+spec:
+  forProvider:
+    source: Inline
+    module: |
+      resource "azuredevops_project" "project" {
+        name        = "ABC"
+        description = "The alphabet1"
+      }
+  providerConfigRef:
+    name: azure-terraform
+
+
+# resource "kubernetes_namespace" "test" {
+  #   metadata {
+  #     name = "test"
+
+  #     labels = {
+  #       app = "nginx"
+  #     }
+  #   }
+  # }
