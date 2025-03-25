@@ -5,27 +5,19 @@ metadata:
     meta.upbound.io/example-id: containerservice/v1beta2/kubernetescluster
   labels:
     testing.upbound.io/example-name: example
-  name: example-kc-with-uai
+  name: example
 spec:
   forProvider:
-    apiServerAccessProfile:
-      authorizedIpRanges:
-        - 192.168.1.0/24
     defaultNodePool:
       name: default
       nodeCount: 1
-      upgradeSettings:
-        maxSurge: 10%
       vmSize: Standard_D2_v2
     dnsPrefix: exampleaks1
     identity:
-      identityIdsSelector:
-        matchLabels:
-          testing.upbound.io/example-name: exmple-managedidentity
-      type: UserAssigned
-    location: North Europe
+      type: SystemAssigned
+    location: West Europe
     resourceGroupNameSelector:
       matchLabels:
-        testing.upbound.io/example-name: example-containerservice
+        testing.upbound.io/example-name: example
     tags:
       Environment: Production
