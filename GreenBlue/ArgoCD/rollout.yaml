@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: rollout-test
+spec:
+  analysis:
+    successfulRunHistoryLimit: 3
+    unsuccessfulRunHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: ngnix
+  template:
+    metadata:
+      labels:
+        app: ngnix
+    spec:
+      containers:
+      - name: ngnix
+        image: nginx:1.26.1
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 10m
+  rollbackWindow:
+    revisions: 1
+  strategy:
+    blueGreen:
+      activeService: rollout-ngnix-active # <- matches Active Service metadata 
+      previewService: rollout-ngnix-preview # <- matches Preview Service metadata
+      prePromotionAnalysis:
+        templates:
+        - templateName: fail2
+        args:
+        - name: msg
+          value: WORLD
+      previewReplicaCount: 1
+      autoPromotionEnabled: true
+      autoPromotionSeconds: 1
+      scaleDownDelaySeconds: 1
+      abortScaleDownDelaySeconds: 1
