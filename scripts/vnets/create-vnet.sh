@@ -10,7 +10,7 @@ FILE_PATH=Recursi/vnets/${NAME}.yaml
 
 
 mkdir -p Recursi/vnets
-cp ./templates/vnet.yaml $FILE_PATH
+cp ./templates/azure/vnet.yaml $FILE_PATH
 
 yq --inplace ".spec.forProvider.location = \"${LOCATION}\"" $FILE_PATH
 yq --inplace ".metadata.name = \"${NAME}\"" $FILE_PATH

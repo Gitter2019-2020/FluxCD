@@ -11,7 +11,7 @@ OLD_META=$(yq ".metadata.name" $OLD_FILE_PATH)
 echo $OLD_META
 
 #create new file with old metadata.name
-cp ./templates/repo.yaml $NEW_FILE_PATH
+cp ./templates/github/repo.yaml $NEW_FILE_PATH
 yq --inplace ".spec.forProvider.name = \"${NEW_NAME}\"" $NEW_FILE_PATH
 yq --inplace ".metadata.name = \"${OLD_META}\"" $NEW_FILE_PATH
 

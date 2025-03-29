@@ -4,7 +4,7 @@ FILE_PATH=Recursi/repos/${NAME}.yaml
 
 
 mkdir -p Recursi/repos
-cp ./templates/repo.yaml $FILE_PATH
+cp ./templates/github/repo.yaml $FILE_PATH
 
 yq --inplace ".spec.forProvider.name = \"${NAME}\"" $FILE_PATH
 yq --inplace ".metadata.name = \"${NAME}\"" $FILE_PATH
