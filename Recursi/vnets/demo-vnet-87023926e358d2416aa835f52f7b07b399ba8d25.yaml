@@ -1,0 +1,10 @@
+apiVersion: network.azure.upbound.io/v1beta1
+kind: VirtualNetwork
+metadata:
+  name: demo-vnet-87023926e358d2416aa835f52f7b07b399ba8d25
+spec:
+  forProvider:
+    addressSpace:
+      - 10.0.0.0/16
+    location: UK South
+    resourceGroupName: Kubernetes_Cluster_RG
