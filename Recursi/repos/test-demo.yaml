@@ -1,0 +1,10 @@
+apiVersion: repo.github.upbound.io/v1alpha1
+kind: Repository
+metadata:
+  name: test-demo
+spec:
+  forProvider:
+    visibility: public
+    name: test-demo
+  providerConfigRef:
+    name: default
